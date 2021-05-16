@@ -21,7 +21,7 @@ public class Rocnikovka extends Application {
     private final Pole[][] policko3 = new Pole[3][3];
 
     private char nynejsiHrac = 'X';
-    File pozadi = new File("D:/Pozadi.gif");
+    File pozadi = new File("D:/pozadi.gif");
     Label multiStav = new Label(" ");
     Label compEasyStav = new Label(" ");
     Label compHardStav = new Label(" ");
@@ -226,32 +226,8 @@ public class Rocnikovka extends Application {
                     policko[2][1].setHrac('O');
                 }
             }
-
-            for (int x = 0; x < 3; x++) {
-                if (policko[0][x].getHrac() == 'X' && policko[1][x].getHrac() == 'X' && policko[2][x].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'X' && policko[x][1].getHrac() == 'X' && policko[x][2].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][0].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][2].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][x].getHrac() == 'O' && policko[1][x].getHrac() == 'O' && policko[2][x].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'O' && policko[x][1].getHrac() == 'O' && policko[x][2].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][0].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][2].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                }
-                if (policko[0][0].getHrac() != ' ' && policko[0][1].getHrac() != ' ' && policko[0][2].getHrac() != ' '
-                        && policko[1][0].getHrac() != ' ' && policko[1][1].getHrac() != ' ' && policko[1][2].getHrac() != ' '
-                        && policko[2][0].getHrac() != ' ' && policko[2][1].getHrac() != ' ' && policko[2][2].getHrac() != ' ') {
-                    compEasyStav.setText("Remíza!");
-
-                }
-            }
+            
+            compStav(policko2, compEasyStav);
         });
 
         policko[0][1].setOnMouseClicked(e -> {
@@ -284,32 +260,8 @@ public class Rocnikovka extends Application {
                     policko[2][0].setHrac('O');
                 }
             }
-
-            for (int x = 0; x < 3; x++) {
-                if (policko[0][x].getHrac() == 'X' && policko[1][x].getHrac() == 'X' && policko[2][x].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'X' && policko[x][1].getHrac() == 'X' && policko[x][2].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][0].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][2].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][x].getHrac() == 'O' && policko[1][x].getHrac() == 'O' && policko[2][x].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'O' && policko[x][1].getHrac() == 'O' && policko[x][2].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][0].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][2].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                }
-                if (policko[0][0].getHrac() != ' ' && policko[0][1].getHrac() != ' ' && policko[0][2].getHrac() != ' '
-                        && policko[1][0].getHrac() != ' ' && policko[1][1].getHrac() != ' ' && policko[1][2].getHrac() != ' '
-                        && policko[2][0].getHrac() != ' ' && policko[2][1].getHrac() != ' ' && policko[2][2].getHrac() != ' ') {
-                    compEasyStav.setText("Remíza!");
-
-                }
-            }
+            
+            compStav(policko2, compEasyStav);
         });
 
         policko[0][2].setOnMouseClicked(e -> {
@@ -346,32 +298,8 @@ public class Rocnikovka extends Application {
                     policko[2][1].setHrac('O');
                 }
             }
-
-            for (int x = 0; x < 3; x++) {
-                if (policko[0][x].getHrac() == 'X' && policko[1][x].getHrac() == 'X' && policko[2][x].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'X' && policko[x][1].getHrac() == 'X' && policko[x][2].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][0].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][2].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][x].getHrac() == 'O' && policko[1][x].getHrac() == 'O' && policko[2][x].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'O' && policko[x][1].getHrac() == 'O' && policko[x][2].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][0].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][2].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                }
-                if (policko[0][0].getHrac() != ' ' && policko[0][1].getHrac() != ' ' && policko[0][2].getHrac() != ' '
-                        && policko[1][0].getHrac() != ' ' && policko[1][1].getHrac() != ' ' && policko[1][2].getHrac() != ' '
-                        && policko[2][0].getHrac() != ' ' && policko[2][1].getHrac() != ' ' && policko[2][2].getHrac() != ' ') {
-                    compEasyStav.setText("Remíza!");
-
-                }
-            }
+            
+            compStav(policko2, compEasyStav);
         });
 
         policko[1][0].setOnMouseClicked(e -> {
@@ -404,32 +332,8 @@ public class Rocnikovka extends Application {
                     policko[0][2].setHrac('O');
                 }
             }
-
-            for (int x = 0; x < 3; x++) {
-                if (policko[0][x].getHrac() == 'X' && policko[1][x].getHrac() == 'X' && policko[2][x].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'X' && policko[x][1].getHrac() == 'X' && policko[x][2].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][0].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][2].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][x].getHrac() == 'O' && policko[1][x].getHrac() == 'O' && policko[2][x].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'O' && policko[x][1].getHrac() == 'O' && policko[x][2].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][0].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][2].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                }
-                if (policko[0][0].getHrac() != ' ' && policko[0][1].getHrac() != ' ' && policko[0][2].getHrac() != ' '
-                        && policko[1][0].getHrac() != ' ' && policko[1][1].getHrac() != ' ' && policko[1][2].getHrac() != ' '
-                        && policko[2][0].getHrac() != ' ' && policko[2][1].getHrac() != ' ' && policko[2][2].getHrac() != ' ') {
-                    compEasyStav.setText("Remíza!");
-
-                }
-            }
+            
+            compStav(policko2, compEasyStav);
         });
 
         policko[1][1].setOnMouseClicked(e -> {
@@ -470,32 +374,8 @@ public class Rocnikovka extends Application {
                     policko[0][2].setHrac('O');
                 }
             }
-
-            for (int x = 0; x < 3; x++) {
-                if (policko[0][x].getHrac() == 'X' && policko[1][x].getHrac() == 'X' && policko[2][x].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'X' && policko[x][1].getHrac() == 'X' && policko[x][2].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][0].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][2].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][x].getHrac() == 'O' && policko[1][x].getHrac() == 'O' && policko[2][x].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'O' && policko[x][1].getHrac() == 'O' && policko[x][2].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][0].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][2].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                }
-                if (policko[0][0].getHrac() != ' ' && policko[0][1].getHrac() != ' ' && policko[0][2].getHrac() != ' '
-                        && policko[1][0].getHrac() != ' ' && policko[1][1].getHrac() != ' ' && policko[1][2].getHrac() != ' '
-                        && policko[2][0].getHrac() != ' ' && policko[2][1].getHrac() != ' ' && policko[2][2].getHrac() != ' ') {
-                    compEasyStav.setText("Remíza!");
-
-                }
-            }
+            
+            compStav(policko2, compEasyStav);
         });
 
         policko[1][2].setOnMouseClicked(e -> {
@@ -528,32 +408,8 @@ public class Rocnikovka extends Application {
                     policko[2][0].setHrac('O');
                 }
             }
-
-            for (int x = 0; x < 3; x++) {
-                if (policko[0][x].getHrac() == 'X' && policko[1][x].getHrac() == 'X' && policko[2][x].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'X' && policko[x][1].getHrac() == 'X' && policko[x][2].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][0].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][2].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][x].getHrac() == 'O' && policko[1][x].getHrac() == 'O' && policko[2][x].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'O' && policko[x][1].getHrac() == 'O' && policko[x][2].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][0].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][2].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                }
-                if (policko[0][0].getHrac() != ' ' && policko[0][1].getHrac() != ' ' && policko[0][2].getHrac() != ' '
-                        && policko[1][0].getHrac() != ' ' && policko[1][1].getHrac() != ' ' && policko[1][2].getHrac() != ' '
-                        && policko[2][0].getHrac() != ' ' && policko[2][1].getHrac() != ' ' && policko[2][2].getHrac() != ' ') {
-                    compEasyStav.setText("Remíza!");
-
-                }
-            }
+            
+            compStav(policko2, compEasyStav);
         });
 
         policko[2][0].setOnMouseClicked(e -> {
@@ -590,32 +446,8 @@ public class Rocnikovka extends Application {
                     policko[0][1].setHrac('O');
                 }
             }
-
-            for (int x = 0; x < 3; x++) {
-                if (policko[0][x].getHrac() == 'X' && policko[1][x].getHrac() == 'X' && policko[2][x].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'X' && policko[x][1].getHrac() == 'X' && policko[x][2].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][0].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][2].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][x].getHrac() == 'O' && policko[1][x].getHrac() == 'O' && policko[2][x].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'O' && policko[x][1].getHrac() == 'O' && policko[x][2].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][0].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][2].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                }
-                if (policko[0][0].getHrac() != ' ' && policko[0][1].getHrac() != ' ' && policko[0][2].getHrac() != ' '
-                        && policko[1][0].getHrac() != ' ' && policko[1][1].getHrac() != ' ' && policko[1][2].getHrac() != ' '
-                        && policko[2][0].getHrac() != ' ' && policko[2][1].getHrac() != ' ' && policko[2][2].getHrac() != ' ') {
-                    compEasyStav.setText("Remíza!");
-
-                }
-            }
+            
+            compStav(policko2, compEasyStav);
         });
 
         policko[2][1].setOnMouseClicked(e -> {
@@ -648,32 +480,8 @@ public class Rocnikovka extends Application {
                     policko[0][2].setHrac('O');
                 }
             }
-
-            for (int x = 0; x < 3; x++) {
-                if (policko[0][x].getHrac() == 'X' && policko[1][x].getHrac() == 'X' && policko[2][x].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'X' && policko[x][1].getHrac() == 'X' && policko[x][2].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][0].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][2].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][x].getHrac() == 'O' && policko[1][x].getHrac() == 'O' && policko[2][x].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'O' && policko[x][1].getHrac() == 'O' && policko[x][2].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][0].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][2].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                }
-                if (policko[0][0].getHrac() != ' ' && policko[0][1].getHrac() != ' ' && policko[0][2].getHrac() != ' '
-                        && policko[1][0].getHrac() != ' ' && policko[1][1].getHrac() != ' ' && policko[1][2].getHrac() != ' '
-                        && policko[2][0].getHrac() != ' ' && policko[2][1].getHrac() != ' ' && policko[2][2].getHrac() != ' ') {
-                    compEasyStav.setText("Remíza!");
-
-                }
-            }
+            
+            compStav(policko2, compEasyStav);
         });
 
         policko[2][2].setOnMouseClicked(e -> {
@@ -710,32 +518,8 @@ public class Rocnikovka extends Application {
                     policko[0][1].setHrac('O');
                 }
             }
-
-            for (int x = 0; x < 3; x++) {
-                if (policko[0][x].getHrac() == 'X' && policko[1][x].getHrac() == 'X' && policko[2][x].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'X' && policko[x][1].getHrac() == 'X' && policko[x][2].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][0].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][2].getHrac() == 'X') {
-                    compEasyStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][x].getHrac() == 'O' && policko[1][x].getHrac() == 'O' && policko[2][x].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'O' && policko[x][1].getHrac() == 'O' && policko[x][2].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][0].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][2].getHrac() == 'O') {
-                    compEasyStav.setText("Prohrál/a jsi!");
-                }
-                if (policko[0][0].getHrac() != ' ' && policko[0][1].getHrac() != ' ' && policko[0][2].getHrac() != ' '
-                        && policko[1][0].getHrac() != ' ' && policko[1][1].getHrac() != ' ' && policko[1][2].getHrac() != ' '
-                        && policko[2][0].getHrac() != ' ' && policko[2][1].getHrac() != ' ' && policko[2][2].getHrac() != ' ') {
-                    compEasyStav.setText("Remíza!");
-
-                }
-            }
+            
+            compStav(policko2, compEasyStav);
         });
 
     }
@@ -942,32 +726,8 @@ public class Rocnikovka extends Application {
                     policko[2][1].setHrac('O');
                 }
             }
-
-            for (int x = 0; x < 3; x++) {
-                if (policko[0][x].getHrac() == 'X' && policko[1][x].getHrac() == 'X' && policko[2][x].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'X' && policko[x][1].getHrac() == 'X' && policko[x][2].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][0].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][2].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][x].getHrac() == 'O' && policko[1][x].getHrac() == 'O' && policko[2][x].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'O' && policko[x][1].getHrac() == 'O' && policko[x][2].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][0].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][2].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                }
-                if (policko[0][0].getHrac() != ' ' && policko[0][1].getHrac() != ' ' && policko[0][2].getHrac() != ' '
-                        && policko[1][0].getHrac() != ' ' && policko[1][1].getHrac() != ' ' && policko[1][2].getHrac() != ' '
-                        && policko[2][0].getHrac() != ' ' && policko[2][1].getHrac() != ' ' && policko[2][2].getHrac() != ' ') {
-                    compHardStav.setText("Remíza!");
-
-                }
-            }
+            
+            compStav(policko3, compHardStav);
         });
 
         policko[0][1].setOnMouseClicked(e -> {
@@ -1157,32 +917,8 @@ public class Rocnikovka extends Application {
                     policko[2][0].setHrac('O');
                 }
             }
-
-            for (int x = 0; x < 3; x++) {
-                if (policko[0][x].getHrac() == 'X' && policko[1][x].getHrac() == 'X' && policko[2][x].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'X' && policko[x][1].getHrac() == 'X' && policko[x][2].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][0].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][2].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][x].getHrac() == 'O' && policko[1][x].getHrac() == 'O' && policko[2][x].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'O' && policko[x][1].getHrac() == 'O' && policko[x][2].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][0].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][2].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                }
-                if (policko[0][0].getHrac() != ' ' && policko[0][1].getHrac() != ' ' && policko[0][2].getHrac() != ' '
-                        && policko[1][0].getHrac() != ' ' && policko[1][1].getHrac() != ' ' && policko[1][2].getHrac() != ' '
-                        && policko[2][0].getHrac() != ' ' && policko[2][1].getHrac() != ' ' && policko[2][2].getHrac() != ' ') {
-                    compHardStav.setText("Remíza!");
-
-                }
-            }
+            
+            compStav(policko3, compHardStav);
         });
 
         policko[0][2].setOnMouseClicked(e -> {
@@ -1350,32 +1086,8 @@ public class Rocnikovka extends Application {
                     policko[2][1].setHrac('O');
                 }
             }
-
-            for (int x = 0; x < 3; x++) {
-                if (policko[0][x].getHrac() == 'X' && policko[1][x].getHrac() == 'X' && policko[2][x].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'X' && policko[x][1].getHrac() == 'X' && policko[x][2].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][0].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][2].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][x].getHrac() == 'O' && policko[1][x].getHrac() == 'O' && policko[2][x].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'O' && policko[x][1].getHrac() == 'O' && policko[x][2].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][0].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][2].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                }
-                if (policko[0][0].getHrac() != ' ' && policko[0][1].getHrac() != ' ' && policko[0][2].getHrac() != ' '
-                        && policko[1][0].getHrac() != ' ' && policko[1][1].getHrac() != ' ' && policko[1][2].getHrac() != ' '
-                        && policko[2][0].getHrac() != ' ' && policko[2][1].getHrac() != ' ' && policko[2][2].getHrac() != ' ') {
-                    compHardStav.setText("Remíza!");
-
-                }
-            }
+            
+            compStav(policko3, compHardStav);
         });
 
         policko[1][0].setOnMouseClicked(e -> {
@@ -1565,32 +1277,8 @@ public class Rocnikovka extends Application {
                     policko[0][2].setHrac('O');
                 }
             }
-
-            for (int x = 0; x < 3; x++) {
-                if (policko[0][x].getHrac() == 'X' && policko[1][x].getHrac() == 'X' && policko[2][x].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'X' && policko[x][1].getHrac() == 'X' && policko[x][2].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][0].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][2].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][x].getHrac() == 'O' && policko[1][x].getHrac() == 'O' && policko[2][x].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'O' && policko[x][1].getHrac() == 'O' && policko[x][2].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][0].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][2].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                }
-                if (policko[0][0].getHrac() != ' ' && policko[0][1].getHrac() != ' ' && policko[0][2].getHrac() != ' '
-                        && policko[1][0].getHrac() != ' ' && policko[1][1].getHrac() != ' ' && policko[1][2].getHrac() != ' '
-                        && policko[2][0].getHrac() != ' ' && policko[2][1].getHrac() != ' ' && policko[2][2].getHrac() != ' ') {
-                    compHardStav.setText("Remíza!");
-
-                }
-            }
+            
+            compStav(policko3, compHardStav);
         });
 
         policko[1][1].setOnMouseClicked(e -> {
@@ -1736,32 +1424,8 @@ public class Rocnikovka extends Application {
                     policko[0][2].setHrac('O');
                 }
             }
-
-            for (int x = 0; x < 3; x++) {
-                if (policko[0][x].getHrac() == 'X' && policko[1][x].getHrac() == 'X' && policko[2][x].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'X' && policko[x][1].getHrac() == 'X' && policko[x][2].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][0].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][2].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][x].getHrac() == 'O' && policko[1][x].getHrac() == 'O' && policko[2][x].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'O' && policko[x][1].getHrac() == 'O' && policko[x][2].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][0].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][2].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                }
-                if (policko[0][0].getHrac() != ' ' && policko[0][1].getHrac() != ' ' && policko[0][2].getHrac() != ' '
-                        && policko[1][0].getHrac() != ' ' && policko[1][1].getHrac() != ' ' && policko[1][2].getHrac() != ' '
-                        && policko[2][0].getHrac() != ' ' && policko[2][1].getHrac() != ' ' && policko[2][2].getHrac() != ' ') {
-                    compHardStav.setText("Remíza!");
-
-                }
-            }
+            
+            compStav(policko3, compHardStav);
         });
 
         policko[1][2].setOnMouseClicked(e -> {
@@ -1951,32 +1615,8 @@ public class Rocnikovka extends Application {
                     policko[2][0].setHrac('O');
                 }
             }
-
-            for (int x = 0; x < 3; x++) {
-                if (policko[0][x].getHrac() == 'X' && policko[1][x].getHrac() == 'X' && policko[2][x].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'X' && policko[x][1].getHrac() == 'X' && policko[x][2].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][0].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][2].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][x].getHrac() == 'O' && policko[1][x].getHrac() == 'O' && policko[2][x].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'O' && policko[x][1].getHrac() == 'O' && policko[x][2].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][0].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][2].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                }
-                if (policko[0][0].getHrac() != ' ' && policko[0][1].getHrac() != ' ' && policko[0][2].getHrac() != ' '
-                        && policko[1][0].getHrac() != ' ' && policko[1][1].getHrac() != ' ' && policko[1][2].getHrac() != ' '
-                        && policko[2][0].getHrac() != ' ' && policko[2][1].getHrac() != ' ' && policko[2][2].getHrac() != ' ') {
-                    compHardStav.setText("Remíza!");
-
-                }
-            }
+            
+            compStav(policko3, compHardStav);
         });
 
         policko[2][0].setOnMouseClicked(e -> {
@@ -2144,32 +1784,8 @@ public class Rocnikovka extends Application {
                     policko[0][1].setHrac('O');
                 }
             }
-
-            for (int x = 0; x < 3; x++) {
-                if (policko[0][x].getHrac() == 'X' && policko[1][x].getHrac() == 'X' && policko[2][x].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'X' && policko[x][1].getHrac() == 'X' && policko[x][2].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][0].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][2].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][x].getHrac() == 'O' && policko[1][x].getHrac() == 'O' && policko[2][x].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'O' && policko[x][1].getHrac() == 'O' && policko[x][2].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][0].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][2].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                }
-                if (policko[0][0].getHrac() != ' ' && policko[0][1].getHrac() != ' ' && policko[0][2].getHrac() != ' '
-                        && policko[1][0].getHrac() != ' ' && policko[1][1].getHrac() != ' ' && policko[1][2].getHrac() != ' '
-                        && policko[2][0].getHrac() != ' ' && policko[2][1].getHrac() != ' ' && policko[2][2].getHrac() != ' ') {
-                    compHardStav.setText("Remíza!");
-
-                }
-            }
+            
+            compStav(policko3, compHardStav);
         });
 
         policko[2][1].setOnMouseClicked(e -> {
@@ -2359,32 +1975,8 @@ public class Rocnikovka extends Application {
                     policko[0][2].setHrac('O');
                 }
             }
-
-            for (int x = 0; x < 3; x++) {
-                if (policko[0][x].getHrac() == 'X' && policko[1][x].getHrac() == 'X' && policko[2][x].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'X' && policko[x][1].getHrac() == 'X' && policko[x][2].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][0].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][2].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][x].getHrac() == 'O' && policko[1][x].getHrac() == 'O' && policko[2][x].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'O' && policko[x][1].getHrac() == 'O' && policko[x][2].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][0].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][2].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                }
-                if (policko[0][0].getHrac() != ' ' && policko[0][1].getHrac() != ' ' && policko[0][2].getHrac() != ' '
-                        && policko[1][0].getHrac() != ' ' && policko[1][1].getHrac() != ' ' && policko[1][2].getHrac() != ' '
-                        && policko[2][0].getHrac() != ' ' && policko[2][1].getHrac() != ' ' && policko[2][2].getHrac() != ' ') {
-                    compHardStav.setText("Remíza!");
-
-                }
-            }
+            
+            compStav(policko3, compHardStav);
         });
 
         policko[2][2].setOnMouseClicked(e -> {
@@ -2552,32 +2144,8 @@ public class Rocnikovka extends Application {
                     policko[0][1].setHrac('O');
                 }
             }
-
-            for (int x = 0; x < 3; x++) {
-                if (policko[0][x].getHrac() == 'X' && policko[1][x].getHrac() == 'X' && policko[2][x].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'X' && policko[x][1].getHrac() == 'X' && policko[x][2].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][0].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][2].getHrac() == 'X') {
-                    compHardStav.setText("Vyhrál/a jsi!");
-                } else if (policko[0][x].getHrac() == 'O' && policko[1][x].getHrac() == 'O' && policko[2][x].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[x][0].getHrac() == 'O' && policko[x][1].getHrac() == 'O' && policko[x][2].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][2].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][0].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                } else if (policko[0][0].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][2].getHrac() == 'O') {
-                    compHardStav.setText("Prohrál/a jsi!");
-                }
-                if (policko[0][0].getHrac() != ' ' && policko[0][1].getHrac() != ' ' && policko[0][2].getHrac() != ' '
-                        && policko[1][0].getHrac() != ' ' && policko[1][1].getHrac() != ' ' && policko[1][2].getHrac() != ' '
-                        && policko[2][0].getHrac() != ' ' && policko[2][1].getHrac() != ' ' && policko[2][2].getHrac() != ' ') {
-                    compHardStav.setText("Remíza!");
-
-                }
-            }
+            
+            compStav(policko3, compHardStav);
         });
     }
 
@@ -2626,6 +2194,33 @@ public class Rocnikovka extends Application {
             this.setOnMouseClicked(event -> kliknuti());
         }
 
+    }
+
+    public void compStav(Pole[][] policko, Label stav) {
+        for (int x = 0; x < 3; x++) {
+            if (policko[0][x].getHrac() == 'X' && policko[1][x].getHrac() == 'X' && policko[2][x].getHrac() == 'X') {
+                stav.setText("Vyhrál/a jsi!");
+            } else if (policko[x][0].getHrac() == 'X' && policko[x][1].getHrac() == 'X' && policko[x][2].getHrac() == 'X') {
+                stav.setText("Vyhrál/a jsi!");
+            } else if (policko[0][2].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][0].getHrac() == 'X') {
+                stav.setText("Vyhrál/a jsi!");
+            } else if (policko[0][0].getHrac() == 'X' && policko[1][1].getHrac() == 'X' && policko[2][2].getHrac() == 'X') {
+                stav.setText("Vyhrál/a jsi!");
+            } else if (policko[0][x].getHrac() == 'O' && policko[1][x].getHrac() == 'O' && policko[2][x].getHrac() == 'O') {
+                stav.setText("Prohrál/a jsi!");
+            } else if (policko[x][0].getHrac() == 'O' && policko[x][1].getHrac() == 'O' && policko[x][2].getHrac() == 'O') {
+                stav.setText("Prohrál/a jsi!");
+            } else if (policko[0][2].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][0].getHrac() == 'O') {
+                stav.setText("Prohrál/a jsi!");
+            } else if (policko[0][0].getHrac() == 'O' && policko[1][1].getHrac() == 'O' && policko[2][2].getHrac() == 'O') {
+                stav.setText("Prohrál/a jsi!");
+            } else if (stav.getText() == " " && policko[0][0].getHrac() != ' ' && policko[0][1].getHrac() != ' ' && policko[0][2].getHrac() != ' '
+                    && policko[1][0].getHrac() != ' ' && policko[1][1].getHrac() != ' ' && policko[1][2].getHrac() != ' '
+                    && policko[2][0].getHrac() != ' ' && policko[2][1].getHrac() != ' ' && policko[2][2].getHrac() != ' ') {
+                stav.setText("Remíza!");
+
+            }
+        }
     }
 
 }
